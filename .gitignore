@@ -1,0 +1,8 @@
+# todolist
+.idea/
+
+# projects .iml files
+*.iml
+
+# Maven
+target/

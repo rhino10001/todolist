@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+    <script src="/js/jquery-3.4.0.min.js"></script>
+    <script src="/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+    <div id="doing-form">
+        <form>
+            <h2>Add doing</h2>
+            <label>Name:</label>
+            <input type="text" name="name" value="">
+            <label>Content:</label>
+            <input type="text" name="content" value="">
+            <label>Term:</label>
+            <input type="text" name="term" value="">
+            <hr>
+            <button id="save-doing">Add</button>
+        </form>
+    </div>
+    <h1>Todo-do! (<span th:text="${doingsCount}">0</span>)</h1>
+    <button id="show-add-doing-form">Add doing</button>
+    <br><br>
+    <div id="doing-list">
+        <div th:each="doing : ${doings}">
+            <a href="#" class="doing-link" th:attr="data-id=${doing.id}" th:text="${doing.name}"></a>
+        </div>
+    </div>
+</body>
+</html>
